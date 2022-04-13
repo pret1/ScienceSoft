@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="book" resource="default" engine="innodb"
+           comment="Catalog Books Datetime Attribute Backend Table">
+        <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="name" nullable="true" lenghth="25" comment="NAME"/>
+        <column xsi:type="varchar" name="content" nullable="true" lenghth="40" comment="CONTENT"/>
+        <column xsi:type="varchar" name="genre" nullable="true" comment="GENRE"/>
+        <column xsi:type="date" name="date_write" nullable="true" comment="DATE_WRITE"/>
+        <column xsi:type="int" name="count_pages" nullable="true" comment="COUNT_PAGES"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
