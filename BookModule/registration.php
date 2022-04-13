@@ -6,6 +6,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'ScienceSoft_FirstModule',
+    'ScienceSoft_BookModule',
     __DIR__
 );
