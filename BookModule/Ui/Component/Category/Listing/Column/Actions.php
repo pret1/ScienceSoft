@@ -22,7 +22,7 @@ class Actions extends Column
     /**
      * @var string
      */
-    protected $_viewUrl;
+    protected string $_viewUrl;
 
     /**
      * Constructor
