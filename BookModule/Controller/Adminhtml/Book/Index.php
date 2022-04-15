@@ -38,12 +38,4 @@ class Index extends Action
         $resultPage->getConfig()->getTitle()->prepend(__('Book Menu'));
         return $resultPage;
     }
-
-//    /**
-//     * @return bool
-//     */
-//    protected function _isAllowed(): bool
-//    {
-//        return $this->_authorization->isAllowed('ScienceSoft_BookModule::menu');
-//    }
 }
