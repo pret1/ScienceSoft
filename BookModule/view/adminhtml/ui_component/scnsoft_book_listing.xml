@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">scnsoft_book_listing.scnsoft_book_listing_data_source</item>
@@ -17,7 +18,9 @@
     </argument>
     <dataSource name="scnsoft_book_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">ScienceSoft\BookModule\Ui\DataProvider\Category\ListingDataProvider</argument>
+            <argument name="class" xsi:type="string">
+                ScienceSoft\BookModule\Ui\DataProvider\Category\ListingDataProvider
+            </argument>
             <argument name="name" xsi:type="string">scnsoft_book_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
             <argument name="requestFieldName" xsi:type="string">entity_id</argument>
@@ -42,7 +45,9 @@
         <massaction name="listing_massaction">
             <argument name="data" xsi:type="array">
                 <item name="data" xsi:type="array">
-                    <item name="selectProvider" xsi:type="string">scnsoft_book_listing.scnsoft_book_listing.scnsoft_book_columns.ids</item>
+                    <item name="selectProvider" xsi:type="string">
+                        scnsoft_book_listing.scnsoft_book_listing.scnsoft_book_columns.ids
+                    </item>
                     <item name="displayArea" xsi:type="string">bottom</item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
                     <item name="indexField" xsi:type="string">entity_id</item>
@@ -56,7 +61,9 @@
                         <item name="url" xsi:type="url" path="dev_grid/category/massDelete"/>
                         <item name="confirm" xsi:type="array">
                             <item name="title" xsi:type="string" translate="true">Delete items</item>
-                            <item name="message" xsi:type="string" translate="true">Are you sure you want to delete selected items?</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you want to delete
+                                selected items?
+                            </item>
                         </item>
                     </item>
                 </argument>
@@ -107,7 +114,8 @@
                 <label translate="true">Name</label>
             </settings>
         </column>
-        <column name="created_at" class="Book\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+        <column name="created_at" class="Book\Ui\Component\Listing\Columns\Date"
+                component="Magento_Ui/js/grid/columns/date">
             <settings>
                 <filter>dateRange</filter>
                 <dataType>date</dataType>

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace ScienceSoft\BookModule\Plugin;
 
-use ScienceSoft\BookModule\Ui\DataProvider\Category\ListingDataProvider as CategoryDataProvider;
 use Magento\Eav\Api\AttributeRepositoryInterface;
 use Magento\Framework\App\ProductMetadataInterface;
 use Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult;
+use ScienceSoft\BookModule\Ui\DataProvider\Category\ListingDataProvider as CategoryDataProvider;
 
 class AddAttributesToUiDataProvider
 {
@@ -25,8 +25,9 @@ class AddAttributesToUiDataProvider
      */
     public function __construct(
         AttributeRepositoryInterface $attributeRepository,
-        ProductMetadataInterface $productMetadata
-    ) {
+        ProductMetadataInterface     $productMetadata
+    )
+    {
         $this->attributeRepository = $attributeRepository;
         $this->productMetadata = $productMetadata;
     }

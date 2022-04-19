@@ -6,29 +6,29 @@ namespace ScienceSoft\UserModule\Model;
 
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Model\AbstractModel;
+use ScienceSoft\UserModule\Model\ResourceModel\Post as PostResource;
 
 class Post extends AbstractModel implements IdentityInterface
 {
+    /**
+     * @var string
+     */
     const CACHE_TAG = 'book';
 
-    protected $_cacheTag = 'book';
-
-    protected $_eventPrefix = 'book';
-
-    protected function _construct()
-    {
-        $this->_init('ScienceSoft\UserModule\Model\ResourceModel\Post');
-    }
-
-    public function getIdentities()
+    /**
+     * @return string[]
+     */
+    public function getIdentities(): array
     {
         return [self::CACHE_TAG . '_' . $this->getId()];
     }
 
-    public function getDefaultValues()
+    /**
+     * @return void
+     * @SuppressWarnings(PHPMD.CamelCaseMethodName)
+     */
+    protected function _construct(): void
     {
-        $values = [];
-
-        return $values;
+        $this->_init(PostResource::class);
     }
 }

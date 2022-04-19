@@ -5,20 +5,24 @@ declare(strict_types=1);
 namespace ScienceSoft\UserModule\Model\ResourceModel\Post;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+use ScienceSoft\UserModule\Model\Post as PostModel;
+use ScienceSoft\UserModule\Model\ResourceModel\Post as PostResource;
 
 class Collection extends AbstractCollection
 {
+    /**
+     * @inheritdoc
+     */
     protected $_idFieldName = 'id';
-    protected $_eventPrefix = 'book_collection';
-    protected $_eventObject = 'post_collection';
 
     /**
      * Define resource model
      *
      * @return void
+     * @SuppressWarnings(PHPMD.CamelCaseMethodName)
      */
-    protected function _construct()
+    protected function _construct(): void
     {
-        $this->_init('ScienceSoft\UserModule\Model\Post', 'ScienceSoft\UserModule\Model\ResourceModel\Post');
+        $this->_init(PostModel::class, PostResource::class);
     }
 }

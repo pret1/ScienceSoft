@@ -7,8 +7,8 @@ namespace ScienceSoft\BookModule\Controller\Adminhtml\Category;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\View\Result\Redirect;
-use Magento\Catalog\Model\ResourceModel\Category\CollectionFactory;
 use Magento\Catalog\Api\CategoryRepositoryInterface;
+use Magento\Catalog\Model\ResourceModel\Category\CollectionFactory;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Exception\NotFoundException;
@@ -25,16 +25,14 @@ class MassDelete extends Action implements HttpPostActionInterface
      * @var CollectionFactory
      */
     protected $collectionFactory;
-
-    /**
-     * @var CategoryRepositoryInterface
-     */
-    private $categoryRepository;
-
     /**
      * @var Filter
      */
     protected $filter;
+    /**
+     * @var CategoryRepositoryInterface
+     */
+    private $categoryRepository;
 
     /**
      * Constructor
@@ -45,11 +43,12 @@ class MassDelete extends Action implements HttpPostActionInterface
      * @param CategoryRepositoryInterface $categoryRepository
      */
     public function __construct(
-        Context $context,
-        Filter $filter,
-        CollectionFactory $collectionFactory,
+        Context                     $context,
+        Filter                      $filter,
+        CollectionFactory           $collectionFactory,
         CategoryRepositoryInterface $categoryRepository
-    ) {
+    )
+    {
         $this->filter = $filter;
         $this->collectionFactory = $collectionFactory;
         $this->categoryRepository = $categoryRepository;
