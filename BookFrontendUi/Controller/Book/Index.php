@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ScienceSoft\BookFrontendUi\Controller\Index;
+namespace ScienceSoft\BookFrontendUi\Controller\Book;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\Page;
@@ -33,18 +33,28 @@ class Index implements HttpGetActionInterface
         $this->collectionFactory = $collectionFactory;
     }
 
-    /**
-     * @return Page
-     */
-    public function execute(): Page
+//    /**
+//     * @return Page
+//     */
+//    public function execute(): Page
+//    {
+//        $collection = $this->collectionFactory->create();
+//        foreach ($collection as $item) {
+//            echo "<pre>";
+//            print_r($item->getData());
+//            echo "</pre>";
+//        }
+//
+//        return $this->pageFactory->create();
+//    }
+//    public function execute()
+//    {
+//        $resultPage = $this->pageFactory->create();
+//        $resultPage->getConfig()->getTitle()->prepend(__('Custom Front View'));
+//        return $resultPage;
+//    }
+    public function execute()
     {
-        $collection = $this->collectionFactory->create();
-        foreach ($collection as $item) {
-            echo "<pre>";
-            print_r($item->getData());
-            echo "</pre>";
-        }
-
         return $this->pageFactory->create();
     }
 }
