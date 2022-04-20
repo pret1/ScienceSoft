@@ -11,38 +11,6 @@ use ScienceSoft\BookFrontendUi\Model\ResourceModel\Post\CollectionFactory;
 
 class BookFrontendUi extends Template
 {
-//    /**
-//     * @return BookFrontendUi
-//     * @SuppressWarnings(PHPMD.CamelCaseMethodName)
-//     */
-//    public function _prepareLayout()
-//    {
-//        return parent::_prepareLayout();
-//    }
-
-//    /**
-//     * @var CollectionFactory
-//     */
-//    private CollectionFactory $collectionFactory;
-//
-//    /**
-//     * @param CollectionFactory $collectionFactory
-//     */
-//    public function __construct(
-//        CollectionFactory $collectionFactory
-//    ) {
-//        $this->collectionFactory = $collectionFactory;
-//    }
-//    public function display()
-//    {
-//        $collection = $this->collectionFactory->create();
-//        foreach ($collection as $item) {
-//            echo "<pre>";
-//            print_r($item->getData());
-//            echo "</pre>";
-//        }
-//    }
-
     /**
      * @var CollectionFactory
      */
@@ -68,9 +36,5 @@ class BookFrontendUi extends Template
         return $this->collectionFactory->create();
     }
 
-    public function sayHello()
-    {
-        return __('Hello World');
-    }
 }
 
