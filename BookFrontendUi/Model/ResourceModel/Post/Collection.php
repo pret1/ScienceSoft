@@ -12,6 +12,7 @@ class Collection extends AbstractCollection
 {
     /**
      * @inheritdoc
+     * @SuppressWarnings(PHPMD.CamelCaseMethodName)
      */
     protected $_idFieldName = 'id';
 
