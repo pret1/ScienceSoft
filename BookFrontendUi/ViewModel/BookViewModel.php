@@ -24,11 +24,6 @@ class BookViewModel implements ArgumentInterface
         $this->collectionFactory = $collectionFactory;
     }
 
-    public function getSomething()
-    {
-        return "Hello World";
-    }
-
     /**
      * @return Collection
      */

@@ -1,21 +1,10 @@
 <?php
-///**
-// * @var \ScienceSoft\BookFrontendUi\Block\BookFrontendUi $block
-// */
-
 /**
  * @var Magento\Framework\View\Element\Template $block
  * @var ScienceSoft\BookFrontendUi\ViewModel\BookViewModel $viewModel
  */
-//$viewModel = $block->getData('view_model');
-
-//$viewModel->getId();
 $viewModel = $block->getViewModel();
-//$viewModel = $block->getViewModel();
 ?>
-<h1><?= $block->escapeHtml($viewModel->getSomething()); ?></h1>
-<?= $viewModel->getSomething()?>
-
 <table>
     <tr>
         <th class="id">Id</th>
