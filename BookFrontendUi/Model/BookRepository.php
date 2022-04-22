@@ -12,10 +12,19 @@ use ScienceSoft\BookFrontendUi\NoSuchEntityException;
 
 class BookRepository implements BookRepositoryInterface
 {
+    /**
+     * @var BookFactory
+     */
     private BookFactory $bookFactory;
 
+    /**
+     * @var CollectionFactory
+     */
     private CollectionFactory $collectionFactory;
 
+    /**
+     * @var BookResource
+     */
     private BookResource $bookResource;
 
     /**
@@ -32,7 +41,12 @@ class BookRepository implements BookRepositoryInterface
         $this->bookResource = $bookResource;
     }
 
-    public function getById($id)
+    /**
+     * @param $id
+     * @return BookInterface
+     * @throws NoSuchEntityException
+     */
+    public function getById($id): BookInterface
     {
         $book = $this->bookFactory->create();
         $book->bookResource()->load($book, $id);
@@ -42,13 +56,21 @@ class BookRepository implements BookRepositoryInterface
         return $book;
     }
 
-    public function save(BookInterface $book)
+    /**
+     * @param BookInterface $book
+     * @return BookInterface
+     */
+    public function save(BookInterface $book): BookInterface
     {
         $book->bookResource()->save($book);
         return $book;
     }
 
-    public function delete(BookInterface $book)
+    /**
+     * @param BookInterface $book
+     * @return BookInterface
+     */
+    public function delete(BookInterface $book): BookInterface
     {
         $book->bookResource()->delete($book);
     }

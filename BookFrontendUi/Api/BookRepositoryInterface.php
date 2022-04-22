@@ -4,26 +4,27 @@ declare(strict_types=1);
 
 namespace ScienceSoft\BookFrontendUi\Api;
 
+use Magento\Framework\Exception\NoSuchEntityException;
 use ScienceSoft\BookFrontendUi\Api\Data\BookInterface;
 
 interface BookRepositoryInterface
 {
     /**
      * @param int $id
-     * @return \ScienceSoft\BookFrontendUi\Api\Data\BookInterface
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @return BookInterface
+     * @throws NoSuchEntityException
      */
-    public function getById($id);
+    public function getById($id): BookInterface;
 
     /**
-     * @param \ScienceSoft\BookFrontendUi\Api\Data\BookInterface $book
-     * @return \ScienceSoft\BookFrontendUi\Api\Data\BookInterface
+     * @param BookInterface $book
+     * @return BookInterface
      */
-    public function save(BookInterface $book);
+    public function save(BookInterface $book): BookInterface;
 
     /**
-     * @param \ScienceSoft\BookFrontendUi\Api\Data\BookInterface $book
+     * @param BookInterface $book
      * @return void
      */
-    public function delete(BookInterface $book);
+    public function delete(BookInterface $book): BookInterface;
 }

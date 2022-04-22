@@ -11,41 +11,66 @@ interface BookInterface extends ExtensibleDataInterface
     /**
      * @return int
      */
-    public function getId();
+    public function getId(): int;
 
     /**
      * @param int $id
      * @return void
      */
-    public function setId($id);
+    public function setId($id): void;
 
     /**
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * @param string $name
      * @return void
      */
-    public function setName($name);
+    public function setName($name): void;
 
     /**
      * @return string
      */
-    public function getContent();
+    public function getContent(): string;
 
-    public function setContent($content);
+    /**
+     * @param string $content
+     * @return void
+     */
+    public function setContent($content): void;
 
-    public function getGenre();
+    /**
+     * @return string
+     */
+    public function getGenre(): string;
 
-    public function setGenre($genre);
+    /**
+     * @param string $genre
+     * @return void
+     */
+    public function setGenre($genre): void;
 
-    public function getDate_write();
+    /**
+     * @return string
+     */
+    public function getDate_write(): string;
 
-    public function setDate_write($date_write);
+    /**
+     * @param string $date_write
+     * @return void
+     */
+    public function setDate_write($date_write): void;
 
-    public function getCount_pages();
+    /**
+     * @return int
+     */
+    public function getCount_pages(): int;
 
-    public function setCount_pages($count_pages);
+    /**
+     * @param int $count_pages
+     * @return void
+     */
+    public function setCount_pages($count_pages): void;
 }

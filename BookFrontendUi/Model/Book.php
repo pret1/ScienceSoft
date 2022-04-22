@@ -19,52 +19,87 @@ class Book extends AbstractExtensibleModel implements BookInterface
         $this->_init(Post::class);
     }
 
-    public function getName()
+    /**
+     * @return string
+     */
+    public function getName(): string
     {
         return $this->_getData(self::NAME);
     }
 
-    public function setName($name)
+    /**
+     * @param string $name
+     * @return void
+     */
+    public function setName($name): void
     {
         $this->setData(self::NAME);
     }
 
-    public function getContent()
+    /**
+     * @return string
+     */
+    public function getContent(): string
     {
         return $this->_getData(self::NAME);
     }
 
-    public function setContent($content)
+    /**
+     * @param string $content
+     * @return void
+     */
+    public function setContent($content): void
     {
         $this->setData(self::NAME);
     }
 
-    public function getGenre()
+    /**
+     * @return string
+     */
+    public function getGenre(): string
     {
         return $this->_getData(self::GENRE);
     }
 
-    public function setGenre($genre)
+    /**
+     * @param string $genre
+     * @return void
+     */
+    public function setGenre($genre): void
     {
         $this->setData(self::GENRE);
     }
 
-    public function getDate_write()
+    /**
+     * @return string
+     */
+    public function getDate_write(): string
     {
         return $this->_getData(self::DATE_WRITE);
     }
 
-    public function setDate_write($date_write)
+    /**
+     * @param string $date_write
+     * @return void
+     */
+    public function setDate_write($date_write): void
     {
         $this->setData(self::DATE_WRITE);
     }
 
-    public function getCount_pages()
+    /**
+     * @return int
+     */
+    public function getCount_pages(): int
     {
         return $this->_getData(self::COUNT_PAGES);
     }
 
-    public function setCount_pages($count_pages)
+    /**
+     * @param int $count_pages
+     * @return void
+     */
+    public function setCount_pages($count_pages): void
     {
         $this->setData(self::COUNT_PAGES);
     }
