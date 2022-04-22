@@ -3,12 +3,9 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template"
-                   name="literature.book.content"
-                   template="ScienceSoft_BookFrontendUi::book_listing.phtml">
-                <arguments>
-                    <argument name="view_model" xsi:type="object">ScienceSoft\BookFrontendUi\ViewModel\BookViewModel</argument>
-                </arguments>
+            <block class="ScienceSoft\BookFrontendUi\Block\BookFrontendUi"
+                   name="literature.book.show"
+                   template="ScienceSoft_BookFrontendUi::book_catalog.phtml">
             </block>
         </referenceContainer>
         <referenceBlock name="footer" remove="true"/>

@@ -9,15 +9,19 @@ use Magento\Framework\Api\ExtensibleDataInterface;
 interface BookInterface extends ExtensibleDataInterface
 {
     /**
+     * Identifier getter
+     *
      * @return int
      */
-    public function getId(): int;
+    public function getId();
 
     /**
-     * @param int $id
-     * @return void
+     * Identifier setter
+     *
+     * @param mixed $value
+     * @return $this
      */
-    public function setId($id): void;
+    public function setId($value);
 
     /**
      * @return string
@@ -48,29 +52,29 @@ interface BookInterface extends ExtensibleDataInterface
 
     /**
      * @param string $genre
-     * @return void
+     * @return self
      */
-    public function setGenre($genre): void;
+    public function setGenre($genre): self;
 
     /**
      * @return string
      */
-    public function getDate_write(): string;
+    public function getDateWrite(): string;
 
     /**
-     * @param string $date_write
+     * @param string $dateWrite
      * @return void
      */
-    public function setDate_write($date_write): void;
+    public function setDateWrite($dateWrite): void;
 
     /**
      * @return int
      */
-    public function getCount_pages(): int;
+    public function getCountPages(): int;
 
     /**
-     * @param int $count_pages
+     * @param int $countPages
      * @return void
      */
-    public function setCount_pages($count_pages): void;
+    public function setCountPages($countPages): void;
 }

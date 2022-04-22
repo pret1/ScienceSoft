@@ -4,18 +4,18 @@ namespace ScienceSoft\BookFrontendUi\Model;
 
 use ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface;
 use ScienceSoft\BookFrontendUi\Api\Data\BookInterface;
-use ScienceSoft\BookFrontendUi\Api\Data\BookFactory;
-use ScienceSoft\BookFrontendUi\Model\ResourceModel\Post as BookResource;
-use ScienceSoft\BookFrontendUi\Model\ResourceModel\Post\Collection;
-use ScienceSoft\BookFrontendUi\Model\ResourceModel\Post\CollectionFactory;
+use ScienceSoft\BookFrontendUi\Api\Data\BookInterfaceFactory;
+use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book as BookResource;
+use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book\Collection;
+use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book\CollectionFactory;
 use ScienceSoft\BookFrontendUi\NoSuchEntityException;
 
 class BookRepository implements BookRepositoryInterface
 {
     /**
-     * @var BookFactory
+     * @var BookInterfaceFactory
      */
-    private BookFactory $bookFactory;
+    private BookInterfaceFactory $bookFactory;
 
     /**
      * @var CollectionFactory
@@ -28,11 +28,11 @@ class BookRepository implements BookRepositoryInterface
     private BookResource $bookResource;
 
     /**
-     * @param BookFactory $bookFactory
+     * @param BookInterfaceFactory $bookFactory
      * @param CollectionFactory $collectionFactory
      */
     public function __construct(
-        BookFactory $bookFactory,
+        BookInterfaceFactory $bookFactory,
         CollectionFactory $collectionFactory,
         BookResource $bookResource
     ) {
@@ -49,7 +49,7 @@ class BookRepository implements BookRepositoryInterface
     public function getById($id): BookInterface
     {
         $book = $this->bookFactory->create();
-        $book->bookResource()->load($book, $id);
+        $this->bookResource->load($book, $id);
         if (!$book->getId()) {
             throw new NoSuchEntityException(__('Unable to find book with ID "%1"', $id));
         }
@@ -68,10 +68,11 @@ class BookRepository implements BookRepositoryInterface
 
     /**
      * @param BookInterface $book
-     * @return BookInterface
+     * @return bool
      */
-    public function delete(BookInterface $book): BookInterface
+    public function delete(BookInterface $book): bool
     {
         $book->bookResource()->delete($book);
+        return true;
     }
 }

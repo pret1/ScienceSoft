@@ -4,7 +4,7 @@ namespace ScienceSoft\BookFrontendUi\Model;
 
 use Magento\Framework\Model\AbstractExtensibleModel;
 use ScienceSoft\BookFrontendUi\Api\Data\BookInterface;
-use ScienceSoft\BookFrontendUi\Model\ResourceModel\Post;
+use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book as BookResource;
 
 class Book extends AbstractExtensibleModel implements BookInterface
 {
@@ -16,7 +16,7 @@ class Book extends AbstractExtensibleModel implements BookInterface
 
     protected function _construct()
     {
-        $this->_init(Post::class);
+        $this->_init(BookResource::class);
     }
 
     /**
@@ -63,26 +63,26 @@ class Book extends AbstractExtensibleModel implements BookInterface
 
     /**
      * @param string $genre
-     * @return void
+     * @return self
      */
-    public function setGenre($genre): void
+    public function setGenre($genre): self
     {
-        $this->setData(self::GENRE);
+       return $this->setData(self::GENRE);
     }
 
     /**
      * @return string
      */
-    public function getDate_write(): string
+    public function getDateWrite(): string
     {
         return $this->_getData(self::DATE_WRITE);
     }
 
     /**
-     * @param string $date_write
+     * @param string $dateWrite
      * @return void
      */
-    public function setDate_write($date_write): void
+    public function setDateWrite($dateWrite): void
     {
         $this->setData(self::DATE_WRITE);
     }
@@ -90,16 +90,16 @@ class Book extends AbstractExtensibleModel implements BookInterface
     /**
      * @return int
      */
-    public function getCount_pages(): int
+    public function getCountPages(): int
     {
         return $this->_getData(self::COUNT_PAGES);
     }
 
     /**
-     * @param int $count_pages
+     * @param int $countPages
      * @return void
      */
-    public function setCount_pages($count_pages): void
+    public function setCountPages($countPages): void
     {
         $this->setData(self::COUNT_PAGES);
     }

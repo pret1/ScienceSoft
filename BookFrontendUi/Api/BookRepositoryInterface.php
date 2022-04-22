@@ -24,7 +24,7 @@ interface BookRepositoryInterface
 
     /**
      * @param BookInterface $book
-     * @return void
+     * @return bool
      */
-    public function delete(BookInterface $book): BookInterface;
+    public function delete(BookInterface $book): bool;
 }
