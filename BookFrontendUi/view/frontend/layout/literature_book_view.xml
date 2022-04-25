@@ -7,7 +7,7 @@
                    name="literature.book.show"
                    template="ScienceSoft_BookFrontendUi::book_one.phtml">
                 <arguments>
-                    <argument name="view_model" xsi:type="object">ScienceSoft\BookFrontendUi\ViewModel\BookViewModel</argument>
+                    <argument name="view_model" xsi:type="object">ScienceSoft\BookFrontendUi\ViewModel\BookOneViewModel</argument>
                 </arguments>
             </block>
         </referenceContainer>

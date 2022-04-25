@@ -24,13 +24,10 @@ class BookViewModel implements ArgumentInterface
     private BookRepositoryInterface $bookRepository;
 
     /**
-     * @var BookRepositoryInterface
+     * @var RequestInterface
      */
     private RequestInterface $request;
 
-    /**
-     * @param CollectionFactory $collectionFactory
-     */
     public function __construct(
         CollectionFactory $collectionFactory,
         BookRepositoryInterface $bookRepository,

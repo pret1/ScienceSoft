@@ -18,7 +18,7 @@ interface BookInterface extends ExtensibleDataInterface
     /**
      * Identifier setter
      *
-     * @param mixed $value
+     * @param mixed $id
      * @return $this
      */
     public function setId($id);
@@ -32,7 +32,7 @@ interface BookInterface extends ExtensibleDataInterface
      * @param string $name
      * @return $this
      */
-    public function setName($name): self;
+    public function setName(string $name): self;
 
     /**
      * @return string
@@ -43,7 +43,7 @@ interface BookInterface extends ExtensibleDataInterface
      * @param string $content
      * @return $this
      */
-    public function setContent($content): self;
+    public function setContent(string $content): self;
 
     /**
      * @return string
@@ -54,7 +54,7 @@ interface BookInterface extends ExtensibleDataInterface
      * @param string $genre
      * @return $this
      */
-    public function setGenre($genre): self;
+    public function setGenre(string $genre): self;
 
     /**
      * @return string
@@ -65,7 +65,7 @@ interface BookInterface extends ExtensibleDataInterface
      * @param string $dateWrite
      * @return $this
      */
-    public function setDateWrite($dateWrite): self;
+    public function setDateWrite(string $dateWrite): self;
 
     /**
      * @return int
@@ -76,5 +76,5 @@ interface BookInterface extends ExtensibleDataInterface
      * @param int $countPages
      * @return $this
      */
-    public function setCountPages($countPages): self;
+    public function setCountPages(int $countPages): self;
 }

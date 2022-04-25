@@ -17,20 +17,17 @@ class BookOneViewModel implements ArgumentInterface
      * @var CollectionFactory
      */
     private CollectionFactory $collectionFactory;
-    
+
     /**
      * @var BookRepositoryInterface
      */
     private BookRepositoryInterface $bookRepository;
-    
+
     /**
-     * @var BookRepositoryInterface
+     * @var RequestInterface
      */
     private RequestInterface $request;
 
-    /**
-     * @param CollectionFactory $collectionFactory
-     */
     public function __construct(
         CollectionFactory $collectionFactory,
         BookRepositoryInterface $bookRepository,
@@ -41,6 +38,9 @@ class BookOneViewModel implements ArgumentInterface
         $this->request = $request;
     }
 
+    /**
+     * @return BookInterface
+     */
     public function getOneBook(): BookInterface
     {
         $bookId = (int) $this->request->getParam('book_id');

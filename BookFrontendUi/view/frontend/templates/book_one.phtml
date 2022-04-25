@@ -4,7 +4,8 @@
  * @var Magento\Framework\View\Element\Template $block
  * @var ScienceSoft\BookFrontendUi\ViewModel\BookOneViewModel $viewModel
  */
-$bookModel = $block->getViewModel()->getOneBook();
+$viewModel = $block->getViewModel();
+$bookModel = $viewModel->getOneBook();
 ?>
 <table>
     <tr>

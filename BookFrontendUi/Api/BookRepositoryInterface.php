@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace ScienceSoft\BookFrontendUi\Api;
 
-use Magento\Framework\Exception\NoSuchEntityException;
 use ScienceSoft\BookFrontendUi\Api\Data\BookInterface;
 
 interface BookRepositoryInterface
@@ -12,7 +11,6 @@ interface BookRepositoryInterface
     /**
      * @param int $id
      * @return BookInterface
-     * @throws NoSuchEntityException
      */
     public function getById($id): BookInterface;
 

@@ -8,7 +8,7 @@ use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use ScienceSoft\BookFrontendUi\Model\ResourceModel\Post\Collection;
 use ScienceSoft\BookFrontendUi\Model\ResourceModel\Post\CollectionFactory;
-use ScienceSoft\BookFrontendUi\ViewModel\BookCatalogViewModel;
+use ScienceSoft\BookFrontendUi\ViewModel\BookOneViewModel;
 
 class BookFrontendUi extends Template
 {

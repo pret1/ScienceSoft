@@ -41,7 +41,7 @@ class Book extends AbstractExtensibleModel implements BookInterface
      */
     public function getContent(): string
     {
-        return $this->_getData(self::NAME);
+        return $this->_getData(self::CONTENT);
     }
 
     /**
@@ -50,7 +50,7 @@ class Book extends AbstractExtensibleModel implements BookInterface
      */
     public function setContent($content): self
     {
-       return $this->setData(self::NAME);
+       return $this->setData(self::CONTENT);
     }
 
     /**
