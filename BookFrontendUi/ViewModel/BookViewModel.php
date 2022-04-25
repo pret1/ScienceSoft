@@ -38,6 +38,9 @@ class BookViewModel implements ArgumentInterface
         $this->request = $request;
     }
 
+    /**
+     * @return BookInterface
+     */
     public function getOneBook(): BookInterface
     {
         $bookId = (int) $this->request->getParam('book_id');

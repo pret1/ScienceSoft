@@ -14,7 +14,11 @@ class Book extends AbstractExtensibleModel implements BookInterface
     const DATE_WRITE = 'date_write';
     const COUNT_PAGES = 'count_pages';
 
-    protected function _construct()
+    /**
+     * @return void
+     * @SuppressWarnings(PHPMD.CamelCaseMethodName)
+     */
+    protected function _construct(): void
     {
         $this->_init(BookResource::class);
     }
@@ -31,9 +35,9 @@ class Book extends AbstractExtensibleModel implements BookInterface
      * @param string $name
      * @return $this
      */
-    public function setName($name): self
+    public function setName(string $name): self
     {
-        $this->setData(self::NAME);
+        return $this->setData(self::NAME);
     }
 
     /**
@@ -48,9 +52,9 @@ class Book extends AbstractExtensibleModel implements BookInterface
      * @param string $content
      * @return $this
      */
-    public function setContent($content): self
+    public function setContent(string $content): self
     {
-       return $this->setData(self::CONTENT);
+        return $this->setData(self::CONTENT);
     }
 
     /**
@@ -65,9 +69,9 @@ class Book extends AbstractExtensibleModel implements BookInterface
      * @param string $genre
      * @return $this
      */
-    public function setGenre($genre): self
+    public function setGenre(string $genre): self
     {
-       return $this->setData(self::GENRE);
+        return $this->setData(self::GENRE);
     }
 
     /**
@@ -82,9 +86,9 @@ class Book extends AbstractExtensibleModel implements BookInterface
      * @param string $dateWrite
      * @return $this
      */
-    public function setDateWrite($dateWrite): self
+    public function setDateWrite(string $dateWrite): self
     {
-       return $this->setData(self::DATE_WRITE);
+        return $this->setData(self::DATE_WRITE);
     }
 
     /**
@@ -99,8 +103,8 @@ class Book extends AbstractExtensibleModel implements BookInterface
      * @param int $countPages
      * @return $this
      */
-    public function setCountPages($countPages): self
+    public function setCountPages(int $countPages): self
     {
-       return $this->setData(self::COUNT_PAGES);
+        return $this->setData(self::COUNT_PAGES);
     }
 }

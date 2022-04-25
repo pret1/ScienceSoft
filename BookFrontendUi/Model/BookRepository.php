@@ -6,8 +6,6 @@ use ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface;
 use ScienceSoft\BookFrontendUi\Api\Data\BookInterface;
 use ScienceSoft\BookFrontendUi\Api\Data\BookInterfaceFactory;
 use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book as BookResource;
-use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book\Collection;
-use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book\CollectionFactory;
 use ScienceSoft\BookFrontendUi\NoSuchEntityException;
 
 class BookRepository implements BookRepositoryInterface
@@ -18,26 +16,18 @@ class BookRepository implements BookRepositoryInterface
     private BookInterfaceFactory $bookFactory;
 
     /**
-     * @var CollectionFactory
-     */
-    private CollectionFactory $collectionFactory;
-
-    /**
      * @var BookResource
      */
     private BookResource $bookResource;
 
     /**
      * @param BookInterfaceFactory $bookFactory
-     * @param CollectionFactory $collectionFactory
      */
     public function __construct(
         BookInterfaceFactory $bookFactory,
-        CollectionFactory $collectionFactory,
         BookResource $bookResource
     ) {
         $this->bookFactory = $bookFactory;
-        $this->collectionFactory = $collectionFactory;
         $this->bookResource = $bookResource;
     }
 
