@@ -1,12 +1,12 @@
 <?php
 
-namespace ScienceSoft\BookFrontendUi\Controller\View;
+namespace ScienceSoft\BookFrontendUi\Controller\Book;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 
-class Show implements HttpGetActionInterface
+class View implements HttpGetActionInterface
 {
     /**
      * @var PageFactory

@@ -6,15 +6,26 @@ namespace ScienceSoft\BookFrontendUi\ViewModel;
 
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
+use ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface;
+use ScienceSoft\BookFrontendUi\Api\Data\BookInterface;
 use ScienceSoft\BookFrontendUi\Model\ResourceModel\Post\Collection;
 use ScienceSoft\BookFrontendUi\Model\ResourceModel\Post\CollectionFactory;
 
-class BookCatalogViewModel implements ArgumentInterface
+class BookOneViewModel implements ArgumentInterface
 {
     /**
      * @var CollectionFactory
      */
     private CollectionFactory $collectionFactory;
+    
+    /**
+     * @var BookRepositoryInterface
+     */
+    private BookRepositoryInterface $bookRepository;
+    
+    /**
+     * @var BookRepositoryInterface
+     */
     private RequestInterface $request;
 
     /**
@@ -22,17 +33,19 @@ class BookCatalogViewModel implements ArgumentInterface
      */
     public function __construct(
         CollectionFactory $collectionFactory,
-        RequestInterface  $request
+        BookRepositoryInterface $bookRepository,
+        RequestInterface $request
     ) {
         $this->collectionFactory = $collectionFactory;
+        $this->bookRepository = $bookRepository;
         $this->request = $request;
     }
 
-    public function getMyPost()
+    public function getOneBook(): BookInterface
     {
-        return $this->request->getParams();
+        $bookId = (int) $this->request->getParam('book_id');
+        return $this->bookRepository->getById($bookId);
     }
-
     /**
      * @return Collection
      */

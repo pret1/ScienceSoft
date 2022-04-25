@@ -17,7 +17,15 @@ class BookViewModel implements ArgumentInterface
      * @var CollectionFactory
      */
     private CollectionFactory $collectionFactory;
+
+    /**
+     * @var BookRepositoryInterface
+     */
     private BookRepositoryInterface $bookRepository;
+
+    /**
+     * @var BookRepositoryInterface
+     */
     private RequestInterface $request;
 
     /**

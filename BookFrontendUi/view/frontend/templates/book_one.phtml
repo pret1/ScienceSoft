@@ -1,0 +1,53 @@
+<?php
+// IN CATALOG
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ * @var ScienceSoft\BookFrontendUi\ViewModel\BookOneViewModel $viewModel
+ */
+$bookModel = $block->getViewModel()->getOneBook();
+?>
+<table>
+    <tr>
+        <th class="id">Id</th>
+        <th class="name">Name</th>
+        <th>Content</th>
+        <th>Genre</th>
+        <th>Date write</th>
+        <th>Count pages</th>
+
+    </tr>
+        <tr>
+            <td><?= $bookModel->getId() ?></td>
+            <td><?= $bookModel->getName() ?></td>
+            <td><?= $bookModel->getContent() ?></td>
+            <td><?= $bookModel->getGenre() ?></td>
+            <td><?= $bookModel->getDateWrite() ?></td>
+            <td><?= $bookModel->getCountPages() ?></td>
+        </tr>
+</table>
+
+<table border="1 px">
+    <tr>
+        <th >Id</th>
+        <td><?= $bookModel->getId() ?></td>
+    </tr>
+    <tr>
+        <th >Name</th>
+        <td><?= $bookModel->getName() ?></td>
+    <tr>
+        <th>Content</th>
+        <td><?= $bookModel->getContent() ?></td>
+    </tr>
+    <tr>
+        <th>Genre</th>
+        <td><?= $bookModel->getGenre() ?></td>
+    </tr>
+    <tr>
+        <th>Date write</th>
+        <td><?= $bookModel->getDateWrite() ?></td>
+    </tr>
+    <tr>
+        <th>Count pages</th>
+        <td><?= $bookModel->getCountPages() ?></td>
+    </tr>
+</table>

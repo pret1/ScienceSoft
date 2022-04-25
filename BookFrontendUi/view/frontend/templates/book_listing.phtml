@@ -21,10 +21,10 @@ $viewModel = $block->getViewModel();
         <td><?= $book->getName() ?></td>
         <td><?= $book->getContent() ?></td>
         <td><?= $book->getGenre() ?></td>
-        <td><?= $book->getDate_write() ?></td>
-        <td><?= $book->getCount_pages() ?></td>
+        <td><?= $book->getDateWrite() ?></td>
+        <td><?= $book->getCountPages() ?></td>
     </tr>
 <?php endforeach; ?>
 </table>
 
-<?php var_dump($viewModel->getOneBook()->getData());
+<?php var_dump($viewModel->getOneBook()->getData()); ?>

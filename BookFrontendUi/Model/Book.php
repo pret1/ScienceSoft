@@ -29,9 +29,9 @@ class Book extends AbstractExtensibleModel implements BookInterface
 
     /**
      * @param string $name
-     * @return void
+     * @return $this
      */
-    public function setName($name): void
+    public function setName($name): self
     {
         $this->setData(self::NAME);
     }
@@ -46,11 +46,11 @@ class Book extends AbstractExtensibleModel implements BookInterface
 
     /**
      * @param string $content
-     * @return void
+     * @return $this
      */
-    public function setContent($content): void
+    public function setContent($content): self
     {
-        $this->setData(self::NAME);
+       return $this->setData(self::NAME);
     }
 
     /**
@@ -63,7 +63,7 @@ class Book extends AbstractExtensibleModel implements BookInterface
 
     /**
      * @param string $genre
-     * @return self
+     * @return $this
      */
     public function setGenre($genre): self
     {
@@ -80,11 +80,11 @@ class Book extends AbstractExtensibleModel implements BookInterface
 
     /**
      * @param string $dateWrite
-     * @return void
+     * @return $this
      */
-    public function setDateWrite($dateWrite): void
+    public function setDateWrite($dateWrite): self
     {
-        $this->setData(self::DATE_WRITE);
+       return $this->setData(self::DATE_WRITE);
     }
 
     /**
@@ -97,10 +97,10 @@ class Book extends AbstractExtensibleModel implements BookInterface
 
     /**
      * @param int $countPages
-     * @return void
+     * @return $this
      */
-    public function setCountPages($countPages): void
+    public function setCountPages($countPages): self
     {
-        $this->setData(self::COUNT_PAGES);
+       return $this->setData(self::COUNT_PAGES);
     }
 }
