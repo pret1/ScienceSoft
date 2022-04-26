@@ -20,9 +20,6 @@ class BookRepository implements BookRepositoryInterface
      */
     private BookResource $bookResource;
 
-    /**
-     * @param BookInterfaceFactory $bookFactory
-     */
     public function __construct(
         BookInterfaceFactory $bookFactory,
         BookResource $bookResource
@@ -52,7 +49,7 @@ class BookRepository implements BookRepositoryInterface
      */
     public function save(BookInterface $book): BookInterface
     {
-        $book->bookResource()->save($book);
+        $this->bookResource->save($book);
         return $book;
     }
 
@@ -62,7 +59,7 @@ class BookRepository implements BookRepositoryInterface
      */
     public function delete(BookInterface $book): bool
     {
-        $book->bookResource()->delete($book);
+        $this->bookResource->delete($book);
         return true;
     }
 }
