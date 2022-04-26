@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+<table name="character" resource="default" engine="innodb"
+       comment="Character Table">
+    <column xsi:type="int" name="character_id" unsigned="false" nullable="false" identity="true" comment="Character ID"/>
+    <column xsi:type="varchar" name="name" nullable="true" length="20" comment="Name character"/>
+    <column xsi:type="varchar" name="name_book" nullable="true" length="20" comment="Name book"/>
+    <column xsi:type="varchar" name="author" nullable="true" length="20" comment="Author write character"/>
+    <column xsi:type="varchar" name="genre" nullable="true" length="20" comment="Genre character"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+        <column name="character_id"/>
+    </constraint>
+</table>
+</schema>
