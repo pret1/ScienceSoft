@@ -1,13 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ScienceSoft\CharacterBook\Controller\Character;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\View\Result\Page;
+use Magento\Framework\View\Result\PageFactory;
 
 class Index implements HttpGetActionInterface
 {
-    public function execute()
+    /**
+     * @var PageFactory
+     */
+    private PageFactory $pageFactory;
+
+    public function __construct(
+        PageFactory $pageFactory
+    ) {
+        $this->pageFactory = $pageFactory;
+    }
+
+    /**
+     * @return Page
+     */
+    public function execute(): Page
     {
-        echo 'Hello new modal';
+        return $this->pageFactory->create();
     }
 }

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ScienceSoft\BookFrontendUi\Model\ResourceModel;
+namespace ScienceSoft\CharacterBook\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
-class Post extends AbstractDb
+class CharacterResourceModel extends AbstractDb
 {
     /**
      * @return void
@@ -14,6 +14,6 @@ class Post extends AbstractDb
      */
     protected function _construct(): void
     {
-        $this->_init('book', 'id');
+        $this->_init('character', 'character_id');
     }
 }

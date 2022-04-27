@@ -1,0 +1,30 @@
+<?php
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ * @var ScienceSoft\CharacterBook\ViewModel\CharacterViewModel $viewModel
+ */
+$viewModel = $block->getViewModel();
+$bookModel = $viewModel->getCharacterCollection();
+
+//var_dump($bookModel);
+?>
+
+<table>
+    <tr>
+        <th class="id">Id</th>
+        <th class="name">Name</th>
+        <th>Content</th>
+        <th>Genre</th>
+        <th>Author</th>
+
+    </tr>
+    <?php foreach ($viewModel->getCharacterCollection() as $character) : ?>
+        <tr>
+            <td><?= $character->getId() ?></td>
+            <td><?= $character->getName() ?></td>
+            <td><?= $character->getNameBook() ?></td>
+            <td><?= $character->getGenre() ?></td>
+            <td><?= $character->getAuthor() ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
