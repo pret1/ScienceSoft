@@ -7,12 +7,12 @@
             <resource ref="anonymous"/>
         </resources>
     </route>
-<!--        <route method="POST" url="/V1/book_example">`-->
-<!--            <service class="ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface" method="save"/>-->
-<!--            <resources>-->
-<!--                <resource ref="anonymous"/>-->
-<!--            </resources>-->
-<!--        </route>-->
+    <route method="POST" url="/V1/book_example">
+        <service class="ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
     <route method="PUT" url="/V1/book_example">
         <service class="ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface" method="save"/>
         <resources>
