@@ -20,6 +20,10 @@ interface CharacterRepositoryInterface
     public function getList(): array;
 
     /**
+     */
+    public function getTable();
+
+    /**
      * @param CharacterInterface $character
      * @return CharacterInterface
      */

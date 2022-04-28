@@ -52,6 +52,14 @@ class CharacterRepository implements CharacterRepositoryInterface
     }
 
     /**
+     */
+    public function getTable()
+    {
+        $character = $this->characterFactory->create();
+        return $this->characterResource->getTable("character");
+    }
+
+    /**
      * @param CharacterInterface $character
      * @return CharacterInterface
      */

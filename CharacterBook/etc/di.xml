@@ -5,4 +5,7 @@
                 type="ScienceSoft\CharacterBook\Model\CharacterRepository"/>
     <preference for="ScienceSoft\CharacterBook\Api\Data\CharacterInterface"
                 type="ScienceSoft\CharacterBook\Model\Character"/>
+    <type name="ScienceSoft\CharacterBook\Model\Character">
+        <plugin name="modifyCharacter" type="ScienceSoft\CharacterBook\Plugin\Model\CharacterPlugin" />
+    </type>
 </config>

@@ -46,6 +46,13 @@ class CharacterViewModel implements ArgumentInterface
     }
 
     /**
+     */
+    public function getCharacterTable()
+    {
+        return $this->characterRepository->getTable();
+    }
+
+    /**
      * @return Collection
      */
     public function getCharacterCollection(): Collection

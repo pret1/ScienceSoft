@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace ScienceSoft\CharacterBook\Model\ResourceModel\Character;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
-use ScienceSoft\CharacterBook\Model\CharacterModel;
 use ScienceSoft\CharacterBook\Model\ResourceModel\CharacterResourceModel;
+use ScienceSoft\CharacterBook\Model\Character;
 
 class Collection extends AbstractCollection
 {
@@ -24,6 +24,6 @@ class Collection extends AbstractCollection
      */
     protected function _construct(): void
     {
-        $this->_init(CharacterModel::class, CharacterResourceModel::class);
+        $this->_init(Character::class, CharacterResourceModel::class);
     }
 }
