@@ -8,6 +8,10 @@ use Magento\TestFramework\TestCase\WebapiAbstract;
 
 class BookRepositoryInterfaceTest extends WebapiAbstract
 {
+    /**
+     * @return void
+     * @magentoApiDataFixture Magento/Book/_files/book.php
+     */
     public function testBookRouting()
     {
         $itemId = 1;
