@@ -14,7 +14,7 @@ class BookRepositoryInterfaceTest extends WebapiAbstract
      */
     public function testBookRouting()
     {
-        $itemId = 1;
+        $itemId = 1000;
         $serviceInfo = [
             'rest' => [
                 'resourcePath' => '/V1/book_example/' . $itemId,

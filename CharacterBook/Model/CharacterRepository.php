@@ -55,8 +55,7 @@ class CharacterRepository implements CharacterRepositoryInterface
      */
     public function getTable()
     {
-        $character = $this->characterFactory->create();
-        return $this->characterResource->getTable("character");
+        return $this->characterResource->getTable("ufi");
     }
 
     /**
