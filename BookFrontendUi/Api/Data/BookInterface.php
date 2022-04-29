@@ -68,13 +68,13 @@ interface BookInterface extends ExtensibleDataInterface
     public function setDateWrite(string $dateWrite): self;
 
     /**
-     * @return int
+     * @return string
      */
-    public function getCountPages(): int;
+    public function getCountPages(): string;
 
     /**
-     * @param int $countPages
+     * @param string $countPages
      * @return $this
      */
-    public function setCountPages(int $countPages): self;
+    public function setCountPages(string $countPages): self;
 }

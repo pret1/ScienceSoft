@@ -10,10 +10,13 @@ class BookRepositoryInterfaceTest extends WebapiAbstract
 {
     /**
      * @return void
-     * @magentoApiDataFixture Magento/Book/_files/book.php
+     * @magentoApiDataFixture Magento/Customer/_files/customer.php
      */
     public function testBookRouting()
     {
+        $regionsCollection = $this->regionsCollectionFactory->create();
+        $regionsCollection->unshiftOrder('region_id', 'ASC');
+        $region = $regionsCollection->getFirstItem()->getId();
         $itemId = 1000;
         $serviceInfo = [
             'rest' => [
