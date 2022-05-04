@@ -5,27 +5,36 @@ declare(strict_types=1);
 namespace ScienceSoft\BookFrontendUi\Test\Api;
 
 use Magento\TestFramework\TestCase\WebapiAbstract;
-use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book\CollectionFactory as BookCollectionFactory;
-use Magento\Framework\Data\Collection\AbstractDb;
+use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book\Collection;
+//use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book\CollectionFactory as BookCollectionFactory;
+//use Magento\Framework\Data\Collection\AbstractDb;
 
 class BookRepositoryInterfaceTest extends WebapiAbstract
 {
-    private BookCollectionFactory $bookCollectionFactory;
-
-    public function __construct(
-        BookCollectionFactory $bookCollectionFactory,
-        AbstractDb $abstractDb
-    ) {
-        $this->bookCollectionFactory = $bookCollectionFactory;
-    }
     /**
      * @return void
-     * @magentoApiDataFixture Magento/Customer/_files/customer.php
+     * @magentoApiDataFixture Magento/Book/_files/book.php
      */
     public function testBookRouting()
     {
-        $bookCollection = $this->bookCollectionFactory->create();
-        $bookCollection->unshiftOrder('region_id', 'ASC');
+//        $filterDate = "egg";
+//        /** @var Collection $gridCollection */
+//        $gridCollection = Bootstrap::getObjectManager()
+//            ->get(Collection::class);
+//        $collection = $gridCollection->addFieldToFilter('created_at', ['qteq' => $filterDate]);
+//        $expectedSelect = "WHERE (((`main_table`.`name` = '{$filterDate}')))";
+//        $this->assertStringContainsString($expectedSelect, $collection->getSelectSql(true));
+        $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
+        /** @var \ScienceSoft\BookFrontendUi\Model\ResourceModel\Book\Collection $bookCollection */
+        $bookCollection = $objectManager->get(Collection::class);
+
+//        $filterDate = 'egg';
+//        $bookCollection = $this->bookCollectionFactory->create();
+//        $bookCollection->getSelectSql('region_id', 'ASC');
+        $bookCollection->getSelect();
+//        $bookName = $bookCollection->addFieldToFilter('name', ['qteq' => $filterDate]);
+//        $expectedSelect = "WHERE (((`main_table`.`name` = '{$filterDate}')))";
+//        $this->assertStringContainsString($expectedSelect, $bookName->getSelectSql(true));
         $bookId = $bookCollection->getFirstItem()->getId();
         $serviceInfo = [
             'rest' => [
