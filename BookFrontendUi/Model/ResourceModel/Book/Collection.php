@@ -8,6 +8,10 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 use ScienceSoft\BookFrontendUi\Model\Book as BookModel;
 use ScienceSoft\BookFrontendUi\Model\ResourceModel\Book as BookResource;
 
+/**
+ * @var BookModel getFirstItem()
+ * @var BookModel getLastItem()
+ */
 class Collection extends AbstractCollection
 {
     /**
