@@ -14,3 +14,4 @@ $bookCollection = $objectManager->get(Collection::class);
 /** @var Book $book */
 $book = $bookCollection->getLastItem();
 $bookId = $book->delete();
+
