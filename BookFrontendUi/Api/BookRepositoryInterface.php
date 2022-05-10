@@ -12,7 +12,7 @@ interface BookRepositoryInterface
      * @param int $id
      * @return BookInterface
      */
-    public function getById($id): BookInterface;
+    public function getById(int $id): BookInterface;
 
     /**
      * @param BookInterface $book

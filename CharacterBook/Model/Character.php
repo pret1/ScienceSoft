@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace ScienceSoft\CharacterBook\Model;
 
+use Magento\Framework\Api\AttributeValueFactory;
+use Magento\Framework\Api\ExtensionAttributesFactory;
+use Magento\Framework\Event\ManagerInterface as EventManager;
 use Magento\Framework\Model\AbstractExtensibleModel;
+use Magento\Framework\Model\Context;
 use ScienceSoft\CharacterBook\Api\Data\CharacterInterface;
 use ScienceSoft\CharacterBook\Model\ResourceModel\CharacterResourceModel;
 
@@ -16,12 +20,39 @@ class Character extends AbstractExtensibleModel implements CharacterInterface
     const GENRE = 'genre';
 
     /**
+     * @var EventManager
+     */
+    private EventManager $eventManager;
+
+    /**
      * @return void
      * @SuppressWarnings(PHPMD.CamelCaseMethodName)
      */
     protected function _construct(): void
     {
         $this->_init(CharacterResourceModel::class);
+    }
+
+    public function __construct(
+        Context $context,
+        \Magento\Framework\Registry $registry,
+        ExtensionAttributesFactory $extensionFactory,
+        AttributeValueFactory $customAttributeFactory,
+        EventManager $eventManager,
+        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        array $data = []
+    ) {
+        parent::__construct(
+            $context,
+            $registry,
+            $extensionFactory,
+            $customAttributeFactory,
+            $resource,
+            $resourceCollection,
+            $data
+        );
+        $this->eventManager = $eventManager;
     }
 
     /**
@@ -46,6 +77,7 @@ class Character extends AbstractExtensibleModel implements CharacterInterface
      */
     public function getNameBook(): string
     {
+        $this->eventManager->dispatch('event_write_log');
         return $this->_getData(self::NAME_BOOK);
     }
 
