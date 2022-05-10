@@ -13,4 +13,19 @@
             <column name="character_id"/>
         </constraint>
     </table>
+<!--    <table name="character_attribute" resource="default" engine="innodb"-->
+<!--           comment="Character attribute Table">-->
+<!--        <column xsi:type="int" name="attribute_id" unsigned="false" nullable="false" identity="true"-->
+<!--                comment="Attribute ID"/>-->
+<!--        <column xsi:type="int" name="character_id" unsigned="false" nullable="false" identity="false"-->
+<!--                comment="Character ID"/>-->
+<!--        <column xsi:type="varchar" name="image" nullable="true" length="20" comment="Name character"/>-->
+<!--        <column xsi:type="varchar" name="age" nullable="true" length="20" comment="Name book"/>-->
+<!--        <constraint xsi:type="primary" referenceId="PRIMARY">-->
+<!--            <column name="attribute_id"/>-->
+<!--        </constraint>-->
+<!--        <constraint xsi:type="foreign" referenceId="CHARACTER_ATTRIBUTE_CHARACTER_ID_CHARACTER_ATTRIBUTE_ID"-->
+<!--                    table="character_attributes" column="character_id" referenceTable="character"-->
+<!--                    referenceColumn="attribute_id" onDelete="CASCADE"/>-->
+<!--    </table>-->
 </schema>
