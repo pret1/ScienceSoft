@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ScienceSoft\CharacterBook\Api\Data;
 
+use Magento\Catalog\Model\Product;
 use Magento\Framework\Api\ExtensibleDataInterface;
 
 interface CharacterInterface extends ExtensibleDataInterface
@@ -66,4 +67,20 @@ interface CharacterInterface extends ExtensibleDataInterface
      * @return $this
      */
     public function setAuthor(string $author): self;
+
+    /**
+     * @inheritdoc
+     *
+     * @return \Magento\Framework\Api\ExtensionAttributesInterface
+     */
+    public function getExtensionAttributes();
+
+    /**
+     * @inheritdoc
+     *
+     * @param \Magento\Catalog\Api\Data\ProductExtensionInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(\Magento\Catalog\Api\Data\ProductExtensionInterface $extensionAttributes);
+
 }
