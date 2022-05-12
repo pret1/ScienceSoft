@@ -68,19 +68,19 @@ interface CharacterInterface extends ExtensibleDataInterface
      */
     public function setAuthor(string $author): self;
 
-    /**
-     * @inheritdoc
-     *
-     * @return \Magento\Framework\Api\ExtensionAttributesInterface
-     */
-    public function getExtensionAttributes();
+//    /**
+//     * @inheritdoc
+//     *
+//     * @return \Magento\Framework\Api\ExtensionAttributesInterface
+//     */
+//    public function getExtensionAttributes();
 
-    /**
-     * @inheritdoc
-     *
-     * @param \Magento\Catalog\Api\Data\ProductExtensionInterface $extensionAttributes
-     * @return $this
-     */
-    public function setExtensionAttributes(\Magento\Catalog\Api\Data\ProductExtensionInterface $extensionAttributes);
+//    /**
+//     * @inheritdoc
+//     *
+//     * @param \Magento\Catalog\Api\Data\ProductExtensionInterface $extensionAttributes
+//     * @return $this
+//     */
+//    public function setExtensionAttributes(\Magento\Catalog\Api\Data\ProductExtensionInterface $extensionAttributes);
 
 }

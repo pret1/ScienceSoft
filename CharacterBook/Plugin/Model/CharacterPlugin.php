@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ScienceSoft\CharacterBook\Plugin\Model;
 
+use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Catalog\Api\ProductRepositoryInterface;
 use ScienceSoft\CharacterBook\Model\Character;
 use ScienceSoft\CharacterBook\Api\CharacterRepositoryInterface;
 use ScienceSoft\CharacterBook\Api\Data\CharacterInterface;
@@ -14,21 +16,24 @@ class CharacterPlugin
     private CharacterRepository $characterRepository;
 
     public function __construct(
-      CharacterRepository $characterRepository
+        CharacterRepository $characterRepository
     ) {
         $this->characterRepository = $characterRepository;
     }
 
-    public function afterGetName(
-        CharacterRepositoryInterface $subject,
-        CharacterInterface $character
+    public function afterGet(
+        ProductRepositoryInterface $subject,
+        ProductInterface $product
     ) {
-        $character = $this->characterRepository->getById(1);
+        $characterAttribute = $this->characterRepository->getById(1);
 
-        $extensionAttributes = $character->getExtensionAttributes();
-        $extensionAttributes->setImage($character->getAuthor());
+        $extensionAttributes = $product->getExtensionAttributes();
+        $extensionAttributes->setNameBook($characterAttribute->getNameBook());
+        $extensionAttributes->setAuthor($characterAttribute->getAuthor());
+        $extensionAttributes->setGenre($characterAttribute->getGenre());
 
-        return $character->setExtensionAttributes($extensionAttributes);
+        $product->setExtensionAttributes($extensionAttributes);
+        return $product;
     }
 
 //    /**
