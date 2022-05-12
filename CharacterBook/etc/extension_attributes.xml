@@ -4,5 +4,7 @@
         <attribute code="name_book" type="string" />
         <attribute code="author" type="string" />
         <attribute code="genre" type="string" />
+        <attribute code="characters" type="ScienceSoft\CharacterBook\Api\Data\CharacterInterface[]" />
+        <attribute code="character_one" type="ScienceSoft\CharacterBook\Api\Data\CharacterInterface" />
     </extension_attributes>
 </config>

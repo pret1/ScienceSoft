@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace ScienceSoft\CharacterBook\Model;
 
-use Magento\Catalog\Model\Product;
 use Magento\Framework\Api\AttributeValueFactory;
 use Magento\Framework\Api\ExtensionAttributesFactory;
 use Magento\Framework\Event\ManagerInterface as EventManager;
@@ -128,9 +127,9 @@ class Character extends AbstractExtensibleModel implements CharacterInterface
     /**
      * @inheritdoc
      *
-     * @return \Magento\Framework\Api\ExtensionAttributesInterface
+     * @return \ScienceSoft\CharacterBook\Api\Data\CharacterExtensionInterface
      */
-    public function getExtensionAttributes()
+    public function getExtensionAttributes(): \ScienceSoft\CharacterBook\Api\Data\CharacterExtensionInterface
     {
         return $this->_getExtensionAttributes();
     }
@@ -138,10 +137,10 @@ class Character extends AbstractExtensibleModel implements CharacterInterface
     /**
      * @inheritdoc
      *
-     * @param \Magento\Catalog\Api\Data\ProductExtensionInterface $extensionAttributes
+     * @param  \ScienceSoft\CharacterBook\Api\Data\CharacterExtensionInterface $extensionAttributes
      * @return $this
      */
-    public function setExtensionAttributes(\Magento\Catalog\Api\Data\ProductExtensionInterface $extensionAttributes)
+    public function setExtensionAttributes( \ScienceSoft\CharacterBook\Api\Data\CharacterExtensionInterface $extensionAttributes): self
     {
         return $this->_setExtensionAttributes($extensionAttributes);
     }

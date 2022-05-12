@@ -32,6 +32,8 @@ class CharacterPlugin
         $extensionAttributes->setAuthor($characterAttribute->getAuthor());
         $extensionAttributes->setGenre($characterAttribute->getGenre());
 
+        $extensionAttributes->setCharacters([$characterAttribute]);
+        $extensionAttributes->setCharacterOne($characterAttribute);
         $product->setExtensionAttributes($extensionAttributes);
         return $product;
     }
