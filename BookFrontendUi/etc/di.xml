@@ -5,7 +5,7 @@
                 type="ScienceSoft\BookFrontendUi\Model\BookRepository"/>
     <preference for="ScienceSoft\BookFrontendUi\Api\Data\BookInterface"
                 type="ScienceSoft\BookFrontendUi\Model\Book"/>
-<!--    <type name="ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface">-->
-<!--        <plugin name="modifyBook" type="ScienceSoft\BookFrontendUi\Plugin\Api\BookPlugin" />-->
-<!--    </type>-->
+    <type name="ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface">
+        <plugin name="modifyBook" type="ScienceSoft\BookFrontendUi\Plugin\Model\BookPlugin" />
+    </type>
 </config>

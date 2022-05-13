@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
-    <extension_attributes for="\ScienceSoft\BookFrontendUi\Api\Data\BookInterface">
-<!--        <attribute code="genre" type="string" />-->
-<!--        <attribute code="characters" type="ScienceSoft\CharacterBook\Api\Data\CharacterInterface[]" />-->
+    <extension_attributes for="ScienceSoft\BookFrontendUi\Api\Data\BookInterface">
+        <attribute code="genre" type="string" />
+        <attribute code="characters" type="ScienceSoft\CharacterBook\Api\Data\CharacterInterface[]" />
     </extension_attributes>
 </config>

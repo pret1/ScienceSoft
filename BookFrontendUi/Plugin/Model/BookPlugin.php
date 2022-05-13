@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ScienceSoft\BookFrontendUi\Plugin\Api;
+namespace ScienceSoft\BookFrontendUi\Plugin\Model;
 
 use ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface;
 use ScienceSoft\BookFrontendUi\Api\Data\BookInterface;
@@ -31,7 +31,7 @@ class BookPlugin
 
         $extensionAttributes = $book->getExtensionAttributes();
         $extensionAttributes->setGenre($characterAttribute->getGenre());
-//        $extensionAttributes->setCharacters([$characterAttribute]);
+        $extensionAttributes->setCharacters([$characterAttribute]);
         $book->setExtensionAttributes($extensionAttributes);
         return $book;
     }
