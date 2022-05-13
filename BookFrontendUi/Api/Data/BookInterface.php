@@ -77,4 +77,17 @@ interface BookInterface extends ExtensibleDataInterface
      * @return $this
      */
     public function setCountPages(string $countPages): self;
+
+    /**
+     * @return \ScienceSoft\BookFrontendUi\Api\Data\BookExtensionInterface
+     */
+    public function getExtensionAttributes(): \ScienceSoft\BookFrontendUi\Api\Data\BookExtensionInterface;
+
+    /**
+     * @param \ScienceSoft\BookFrontendUi\Api\Data\BookExtensionInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(
+        \ScienceSoft\BookFrontendUi\Api\Data\BookExtensionInterface $extensionAttributes
+    ): self;
 }

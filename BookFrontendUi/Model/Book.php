@@ -107,4 +107,22 @@ class Book extends AbstractExtensibleModel implements BookInterface
     {
         return $this->setData(self::COUNT_PAGES, $countPages);
     }
+
+    /**
+     * @return \ScienceSoft\BookFrontendUi\Api\Data\BookExtensionInterface
+     */
+    public function getExtensionAttributes(): \ScienceSoft\BookFrontendUi\Api\Data\BookExtensionInterface
+    {
+        return $this->_getExtensionAttributes();
+    }
+
+    /**
+     * @param \ScienceSoft\BookFrontendUi\Api\Data\BookExtensionInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(
+        \ScienceSoft\BookFrontendUi\Api\Data\BookExtensionInterface $extensionAttributes
+    ): self {
+        return $this->_setExtensionAttributes($extensionAttributes);
+    }
 }
