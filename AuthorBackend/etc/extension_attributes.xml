@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="ScienceSoft\AuthorBackend\Api\Data\AuthorInterface">
+        <attribute code="date_write" type="string" />
+        <attribute code="books" type="ScienceSoft\BookFrontendUi\Api\Data\BookInterface[]" />
+    </extension_attributes>
+</config>

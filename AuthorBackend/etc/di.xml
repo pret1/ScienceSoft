@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="ScienceSoft\AuthorBackend\Api\AuthorRepositoryInterface"
+                type="ScienceSoft\AuthorBackend\Model\AuthorRepository"/>
+    <preference for="ScienceSoft\AuthorBackend\Api\Data\AuthorInterface"
+                type="ScienceSoft\AuthorBackend\Model\Author"/>
+    <type name="ScienceSoft\AuthorBackend\Api\AuthorRepositoryInterface">
+        <plugin name="modifyAuthor" type="ScienceSoft\AuthorBackend\Plugin\Api\AuthorPlugin" />
+    </type>
+</config>
