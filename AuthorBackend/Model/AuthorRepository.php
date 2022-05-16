@@ -9,10 +9,20 @@ use ScienceSoft\AuthorBackend\Model\ResourceModel\AuthorResourceModel as AuthorR
 
 class AuthorRepository implements AuthorRepositoryInterface
 {
+    /**
+     * @var AuthorFactory
+     */
     private AuthorFactory $authorFactory;
 
+    /**
+     * @var AuthorResource
+     */
     private AuthorResource $authorResource;
 
+    /**
+     * @param AuthorFactory $authorFactory
+     * @param AuthorResource $authorResource
+     */
     public function __construct(
         AuthorFactory $authorFactory,
         AuthorResource $authorResource
@@ -21,6 +31,10 @@ class AuthorRepository implements AuthorRepositoryInterface
         $this->authorResource = $authorResource;
     }
 
+    /**
+     * @param int $id
+     * @return AuthorInterface
+     */
     public function getById(int $id): AuthorInterface
     {
         $author = $this->authorFactory->create();
@@ -28,12 +42,22 @@ class AuthorRepository implements AuthorRepositoryInterface
         return $author;
     }
 
+    /**
+     * @param AuthorInterface $author
+     * @return AuthorInterface
+     * @throws \Magento\Framework\Exception\AlreadyExistsException
+     */
     public function save(AuthorInterface $author): AuthorInterface
     {
         $this->authorResource->save($author);
         return $author;
     }
 
+    /**
+     * @param AuthorInterface $author
+     * @return bool
+     * @throws \Exception
+     */
     public function delete(AuthorInterface $author): bool
     {
         $this->authorResource->delete($author);

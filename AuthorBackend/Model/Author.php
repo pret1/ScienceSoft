@@ -22,46 +22,78 @@ class Author extends AbstractExtensibleModel implements AuthorInterface
     {
         $this->_init(AuthorResourceModel::class);
     }
+
+    /**
+     * @return string
+     */
     public function getName(): string
     {
         return $this->_getData(self::NAME);
     }
 
+    /**
+     * @param string $name
+     * @return $this
+     */
     public function setName(string $name): self
     {
         return $this->setData(self::NAME);
     }
 
+    /**
+     * @return string
+     */
     public function getNameWrittenBooks(): string
     {
         return $this->_getData(self::NAME_BOOKS);
     }
 
+    /**
+     * @param string $nameBook
+     * @return $this
+     */
     public function setNameWrittenBooks(string $nameBook): self
     {
         return $this->setData(self::NAME_BOOKS);
     }
 
+    /**
+     * @return string
+     */
     public function getDateBorn(): string
     {
         return $this->_getData(self::DATE_BORN);
     }
 
+    /**
+     * @param string $dateBorn
+     * @return $this
+     */
     public function setDateBorn(string $dateBorn): self
     {
         return $this->setData(self::DATE_BORN);
     }
 
+    /**
+     * @return string
+     */
     public function getGenre(): string
     {
         return $this->_getData(self::GENRE);
     }
 
+    /**
+     * @param string $genre
+     * @return $this
+     */
     public function setGenre(string $genre): self
     {
         return $this->setData(self::GENRE);
     }
 
+    /**
+     * @return AuthorExtensionInterface
+     */
     public function getExtensionAttributes(): \ScienceSoft\AuthorBackend\Api\Data\AuthorExtensionInterface
     {
         return $this->_getExtensionAttributes();
