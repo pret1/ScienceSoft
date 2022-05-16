@@ -52,9 +52,17 @@ class AddTurbine implements DataPatchInterface
         $eavSetup->addAttribute('catalog_product', 'turbine2', [
             'type' => 'int',
             'label' => 'turbine2',
-            'input' => 'select',
-            'used_in_product_listing' => true,
-            'user_defined' => true
+            'input' => 'boolean',
+            'source' => 'Magento\Eav\Model\Entity\Attribute\Source\Boolean',
+            'default' => '0',
+            'used_in_product_listing' => 0,
+            'user_defined' => 1,
+            'global' => 0,
+            'filterable' => 1,
+            'is_html_allowed_on_front' => 1,
+            'is_used_in_grid' => 1,
+            'is_visible_in_grid' =>1,
+            'is_filterable_in_grid' => 1,
         ]);
     }
 }
