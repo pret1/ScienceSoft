@@ -7,6 +7,12 @@
             <resource ref="anonymous"/>
         </resources>
     </route>
+    <route method="GET" url="/V1/book_character">
+        <service class="ScienceSoft\CharacterBook\Api\CharacterRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
     <route method="POST" url="/V1/book_character">
         <service class="ScienceSoft\CharacterBook\Api\CharacterRepositoryInterface" method="save"/>
         <resources>

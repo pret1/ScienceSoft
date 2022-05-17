@@ -4,10 +4,15 @@ declare(strict_types=1);
 
 namespace ScienceSoft\CharacterBook\Model;
 
+use Magento\Framework\Api\SearchCriteriaInterface;
 use ScienceSoft\CharacterBook\Api\Data\CharacterInterface;
 use ScienceSoft\CharacterBook\Api\Data\CharacterInterfaceFactory as CharacterFactory;
 use ScienceSoft\CharacterBook\Api\CharacterRepositoryInterface;
+use ScienceSoft\CharacterBook\Api\Data\CharacterSearchResultInterface;
+use ScienceSoft\CharacterBook\Api\Data\CharacterSearchResultInterfaceFactory;
 use ScienceSoft\CharacterBook\Model\ResourceModel\CharacterResourceModel as CharacterResource;
+use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
+use ScienceSoft\CharacterBook\Model\ResourceModel\Character\CollectionFactory;
 
 class CharacterRepository implements CharacterRepositoryInterface
 {
@@ -21,13 +26,34 @@ class CharacterRepository implements CharacterRepositoryInterface
      */
     private CharacterResource $characterResource;
 
+    /**
+     * @var CharacterSearchResultInterfaceFactory
+     */
+    private CharacterSearchResultInterfaceFactory $characterSearchResultInterfaceFactory;
+
+    /**
+     * @var CollectionProcessorInterface
+     */
+    private CollectionProcessorInterface $collectionProcessor;
+
+    /**
+     * @var CollectionFactory
+     */
+    private CollectionFactory $collectionFactory;
+
     public function __construct(
         CharacterFactory  $characterFactory,
-        CharacterResource $characterResource
+        CharacterResource $characterResource,
+        CharacterSearchResultInterfaceFactory $characterSearchResultInterfaceFactory,
+        CollectionProcessorInterface $collectionProcessor,
+        CollectionFactory $collectionFactory
     ) {
 
         $this->characterFactory = $characterFactory;
         $this->characterResource = $characterResource;
+        $this->characterSearchResultInterfaceFactory = $characterSearchResultInterfaceFactory;
+        $this->collectionProcessor = $collectionProcessor;
+        $this->collectionFactory = $collectionFactory;
     }
 
     /**
@@ -38,16 +64,6 @@ class CharacterRepository implements CharacterRepositoryInterface
     {
         $character = $this->characterFactory->create();
         $this->characterResource->load($character, $id);
-        return $character;
-    }
-
-    /**
-     * @return CharacterInterface[]
-     */
-    public function getList(): array
-    {
-        $character = $this->characterFactory->create();
-        $this->characterResource->getTable($character);
         return $character;
     }
 
@@ -69,5 +85,15 @@ class CharacterRepository implements CharacterRepositoryInterface
     {
         $this->characterResource->delete($character);
         return true;
+    }
+
+    public function getList(SearchCriteriaInterface $searchCriteria): CharacterSearchResultInterface
+    {
+        $collection = $this->collectionFactory->create();
+        $this->collectionProcessor->process($searchCriteria, $collection);
+        $searchResults = $this->characterSearchResultInterfaceFactory->create();
+        $searchResults->setSearchCriteria($searchCriteria);
+        $searchResults->setItems($collection->getItems());
+        return $searchResults;
     }
 }

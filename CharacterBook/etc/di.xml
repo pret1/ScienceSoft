@@ -5,6 +5,8 @@
                 type="ScienceSoft\CharacterBook\Model\CharacterRepository"/>
     <preference for="ScienceSoft\CharacterBook\Api\Data\CharacterInterface"
                 type="ScienceSoft\CharacterBook\Model\Character"/>
+    <preference for="ScienceSoft\CharacterBook\Api\Data\CharacterSearchResultInterface"
+                type="Magento\Framework\Api\SearchResults"/>
     <type name="Magento\Catalog\Api\ProductRepositoryInterface">
         <plugin name="modifyProduct" type="ScienceSoft\CharacterBook\Plugin\Model\CharacterPlugin" />
     </type>

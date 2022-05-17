@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace ScienceSoft\CharacterBook\Api;
 
+use Magento\Framework\Api\SearchCriteriaInterface;
 use ScienceSoft\CharacterBook\Api\Data\CharacterInterface;
+use ScienceSoft\CharacterBook\Api\Data\CharacterSearchResultInterface;
 
 interface CharacterRepositoryInterface
 {
@@ -15,9 +17,10 @@ interface CharacterRepositoryInterface
     public function getById($id): CharacterInterface;
 
     /**
-     * @return CharacterInterface[]
+     * @param SearchCriteriaInterface $searchCriteria
+     * @return CharacterSearchResultInterface
      */
-    public function getList(): array;
+    public function getList(SearchCriteriaInterface $searchCriteria): CharacterSearchResultInterface;
 
     /**
      * @param CharacterInterface $character
