@@ -17,10 +17,10 @@ interface CharacterRepositoryInterface
     public function getById($id): CharacterInterface;
 
     /**
-     * @param SearchCriteriaInterface $searchCriteria
-     * @return CharacterSearchResultInterface
+     * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @return \ScienceSoft\CharacterBook\Api\Data\CharacterSearchResultInterface
      */
-    public function getList(SearchCriteriaInterface $searchCriteria): CharacterSearchResultInterface;
+    public function getList(SearchCriteriaInterface $searchCriteria);
 
     /**
      * @param CharacterInterface $character

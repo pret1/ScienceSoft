@@ -87,9 +87,10 @@ class CharacterRepository implements CharacterRepositoryInterface
         return true;
     }
 
-    public function getList(SearchCriteriaInterface $searchCriteria): CharacterSearchResultInterface
+    public function getList(SearchCriteriaInterface $searchCriteria)
     {
         $collection = $this->collectionFactory->create();
+
         $this->collectionProcessor->process($searchCriteria, $collection);
         $searchResults = $this->characterSearchResultInterfaceFactory->create();
         $searchResults->setSearchCriteria($searchCriteria);
