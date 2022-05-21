@@ -4,6 +4,7 @@
     <table name="book" resource="default" engine="innodb"
            comment="Catalog Books Datetime Attribute Backend Table">
         <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="int" name="entity_id" nullable="true" comment="entity_id"/>
         <column xsi:type="varchar" name="name" nullable="true" length="40" comment="NAME"/>
         <column xsi:type="varchar" name="author" nullable="true" length="40" comment="AUTHOR BOOK"/>
         <column xsi:type="varchar" name="content" nullable="true" length="40" comment="CONTENT"/>
@@ -13,5 +14,8 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
         </constraint>
+        <constraint xsi:type="foreign" referenceId="BOOK_ID_ENTITY_ID"
+                    table="book" column="entity_id" referenceTable="character" referenceColumn="character_id"
+                    onDelete="CASCADE"/>
     </table>
 </schema>

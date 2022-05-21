@@ -61,6 +61,10 @@ class BookRepository implements BookRepositoryInterface
         return $book;
     }
 
+    /**
+     * @param SearchCriteriaInterface $searchCriteria
+     * @return BookSearchResultInterface
+     */
     public function getList(SearchCriteriaInterface $searchCriteria)
     {
         $collection = $this->collectionFactory->create();

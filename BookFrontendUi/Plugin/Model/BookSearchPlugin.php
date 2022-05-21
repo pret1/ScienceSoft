@@ -18,21 +18,17 @@ class BookSearchPlugin
         $this->characterRepository = $characterRepository;
     }
 
-    /**
-     * @param BookRepositoryInterface $subject
-     * @param BookInterface $book
-     * @return BookInterface
-     */
+
     public function afterGetList(
         BookRepositoryInterface $subject,
-        BookInterface $book
+        \ScienceSoft\BookFrontendUi\Api\Data\BookSearchResultInterface $bookSearchResult
     ) {
         $characterAttribute = $this->characterRepository->getById(1);
 
-        $extensionAttributes = $book->getExtensionAttributes();
+        $extensionAttributes = $bookSearchResult->getExtensionAttributes();
         $extensionAttributes->setGenre($characterAttribute->getGenre());
         $extensionAttributes->setCharacters([$characterAttribute]);
-        $book->setExtensionAttributes($extensionAttributes);
-        return $book;
+        $bookSearchResult->setExtensionAttributes($extensionAttributes);
+        return $bookSearchResult;
     }
 }

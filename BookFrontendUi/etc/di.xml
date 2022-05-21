@@ -8,7 +8,7 @@
     <preference for="ScienceSoft\BookFrontendUi\Api\Data\BookSearchResultInterface"
                 type="Magento\Framework\Api\SearchResults"/>
     <type name="ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface">
-        <plugin name="modifyBook" type="ScienceSoft\BookFrontendUi\Plugin\Model\BookPlugin" />
+        <plugin name="modifyBook" type="ScienceSoft\BookFrontendUi\Plugin\Model\BookPlugin" disabled="false"/>
         <plugin name="modifyBookSearch" type="ScienceSoft\BookFrontendUi\Plugin\Model\BookSearchPlugin" disabled="true" />
     </type>
 </config>

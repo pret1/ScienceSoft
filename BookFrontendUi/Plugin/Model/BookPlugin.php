@@ -7,10 +7,13 @@ namespace ScienceSoft\BookFrontendUi\Plugin\Model;
 use ScienceSoft\BookFrontendUi\Api\BookRepositoryInterface;
 use ScienceSoft\BookFrontendUi\Api\Data\BookInterface;
 use ScienceSoft\CharacterBook\Model\CharacterRepository;
+use ScienceSoft\BookFrontendUi\Api\Data\BookSearchResultInterface;
 
 class BookPlugin
 {
     private CharacterRepository $characterRepository;
+
+    private BookSearchResultInterface $bookSearchResult;
 
     public function __construct(
         CharacterRepository $characterRepository
@@ -35,4 +38,14 @@ class BookPlugin
         $book->setExtensionAttributes($extensionAttributes);
         return $book;
     }
+
+//    public function afterGetList(
+//        BookRepositoryInterface $subject,
+//        BookSearchResultInterface $bookSearchResult
+//    ) {
+//        foreach ($bookSearchResult->getItems() as $book) {
+//            $this->afterGetById($subject, $book);
+//        }
+//        return $bookSearchResult;
+//    }
 }
