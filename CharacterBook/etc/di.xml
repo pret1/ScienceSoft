@@ -10,4 +10,23 @@
     <type name="Magento\Catalog\Api\ProductRepositoryInterface">
         <plugin name="modifyProduct" type="ScienceSoft\CharacterBook\Plugin\Model\CharacterPlugin" />
     </type>
+
+    <type name="Magento\Framework\Event\Config\Reader">
+        <arguments>
+            <argument name="fileName" xsi:type="string">events666.xml</argument>
+            <argument name="converter" xsi:type="object">Magento\Framework\Event\Config\Converter</argument>
+            <argument name="schemaLocator" xsi:type="object">\Magento\Framework\Event\Config\SchemaLocator</argument>
+        </arguments>
+    </type>
+    <virtualType name="pdfConfigDataStorage" type="Magento\Framework\Config\Data">
+        <arguments>
+            <argument name="reader" xsi:type="object">Magento\Framework\Event\Config\Reader</argument>
+            <argument name="cacheId" xsi:type="string">event_config</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\Event\Config">
+        <arguments>
+            <argument name="_dataContainer" xsi:type="object">pdfConfigDataStorage</argument>
+        </arguments>
+    </type>
 </config>
